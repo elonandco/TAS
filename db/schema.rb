@@ -11,9 +11,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20161228052324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: :cascade do |t|
+    t.string   "blog_type"
+    t.string   "title"
+    t.string   "share"
+    t.string   "description"
+    t.string   "image"
+    t.boolean  "sponsored"
+    t.boolean  "ad"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.datetime "event_date"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "event_type"
+    t.string   "title"
+    t.string   "place"
+    t.string   "description"
+    t.string   "image"
+    t.string   "sponsored"
+    t.string   "ad"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.datetime "picture_date"
+    t.string   "picture_type"
+    t.string   "title"
+    t.string   "share"
+    t.string   "place"
+    t.string   "description"
+    t.string   "image"
+    t.boolean  "sponsored"
+    t.boolean  "ad"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.datetime "video_date"
+    t.string   "video_type"
+    t.string   "title"
+    t.string   "share"
+    t.string   "place"
+    t.string   "description"
+    t.string   "image"
+    t.boolean  "sponsored"
+    t.boolean  "ad"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end
